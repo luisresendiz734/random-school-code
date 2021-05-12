@@ -9,8 +9,7 @@
 
 int main() {
 
-    // Server cconfiguration
-
+    // Open a new socket
     int udp_socket = socket(AF_INET, SOCK_DGRAM, 0);
 
     if(udp_socket == -1) {
@@ -20,6 +19,7 @@ int main() {
 
     printf("Open socket: OK\n");
 
+    // Server config
     struct sockaddr_in server;
 
     server.sin_family = AF_INET;
@@ -37,7 +37,6 @@ int main() {
 
 
     // Get client message
-
     struct sockaddr_in client;
     unsigned char buffer[512];
 
