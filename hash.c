@@ -59,7 +59,7 @@ int main() {
     printf("Number of buckets: ");
     scanf("%d", &buckets);
 
-    int range = 1000 / buckets;
+    int range = 1000 / buckets + 1;
 
     fp = fopen("sorted.txt", "w");
 
@@ -72,6 +72,8 @@ int main() {
         if(i + 1 == buckets || r > 999) {
             r = 999;
         }
+
+	if(l > 999) break;
 
         data* d = malloc(sizeof(data));
 
